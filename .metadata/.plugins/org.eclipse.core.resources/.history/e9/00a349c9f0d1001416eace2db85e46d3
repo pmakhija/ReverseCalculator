@@ -1,0 +1,13 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+public class RNCTestCase {
+
+	@Test
+	public void test() {
+		//Calculate({5,4,3,+,+});
+	}
+
+}

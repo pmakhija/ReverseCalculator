@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRPNPostfix" project="ReverseNotationCalculator" tests="31" started="31" failures="0" errors="0" ignored="0">
+  <testsuite name="test.java.TestRPNPostfix" time="0.012">
+    <testcase name="testFloatMultiplyOperator" classname="test.java.TestRPNPostfix" time="0.008"/>
+    <testcase name="testNegativeBothOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testNegativeBothDivideOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testPowerOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testNegativeSingleDivideOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testPercentageMultipleOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testMultipleIntegerOperator" classname="test.java.TestRPNPostfix" time="0.001"/>
+    <testcase name="testIntegerMinusOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testNegativeBothMultiplyOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testZeroDivideOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testExceptionMinusOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testPercentageOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testFloatDivideOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testFloatOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testMultipleOperator" classname="test.java.TestRPNPostfix" time="0.001"/>
+    <testcase name="testNegativeBothMinusOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testNegativeSingleMultiplyOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testNegativeSingleMinusOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testFactorialNegativeOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testFactorialOperator" classname="test.java.TestRPNPostfix" time="0.001"/>
+    <testcase name="testIntegerMultiplyOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testExceptionMultiplyOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testFloatMinusOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testIntegerOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testIntegerDivideOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testNegativeSingleOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testZeroMultiplyOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testExceptionOperator" classname="test.java.TestRPNPostfix" time="0.001"/>
+    <testcase name="testExceptionDivideOperator" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testMultipleOperators" classname="test.java.TestRPNPostfix" time="0.0"/>
+    <testcase name="testMultipleOperators2" classname="test.java.TestRPNPostfix" time="0.0"/>
+  </testsuite>
+</testrun>

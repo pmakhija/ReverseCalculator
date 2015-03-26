@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CSDCucumberProject" tests="4" started="4" failures="0" errors="0" ignored="4">
+  <testsuite name="test.java.TestRunner" time="0.0">
+    <testsuite name="Feature: User Profile Creation" time="0.0">
+      <testsuite name="Scenario: Clicking Register Button" time="0.0" incomplete="true">
+        <skipped/>
+        <testcase name="Given accessing the &quot;Collegejobs.com&quot;" classname="Scenario: Clicking Register Button" time="0.0" ignored="true"/>
+        <testcase name="And the &quot;Register&quot; button is displayed" classname="Scenario: Clicking Register Button" time="0.0" ignored="true"/>
+        <testcase name="When Clicking the &quot;Register&quot; Button" classname="Scenario: Clicking Register Button" time="0.0" ignored="true"/>
+        <testcase name="Then Registration Form should be displayed" classname="Scenario: Clicking Register Button" time="0.0" ignored="true"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

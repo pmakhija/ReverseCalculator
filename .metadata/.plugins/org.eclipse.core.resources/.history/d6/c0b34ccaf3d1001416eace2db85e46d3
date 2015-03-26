@@ -1,0 +1,29 @@
+package test.java;
+import static org.junit.Assert.*;
+import junit.framework.Assert;
+import junit.framework.TestCase;
+import main.java.RPNPostFix;
+
+import org.junit.Test;
+
+
+public class TestRPNPostfix  {
+
+	@Test
+	public void testtwocontOperator() {
+		//Calculate({5,4,+});
+		
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		int arr[] = {5,4};
+		Assert.assertEquals(9, rpnPostfix.sum(arr));
+		
+		
+	}
+	
+	@Test
+	public void testalternateOperators(){
+		//Calculate({5,4,+,3,+});
+	}
+	
+
+}

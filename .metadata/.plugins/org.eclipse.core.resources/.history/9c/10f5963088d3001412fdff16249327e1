@@ -1,0 +1,43 @@
+package test.java;
+
+import org.junit.runner.RunWith;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import cucumber.api.junit.Cucumber;
+
+
+@SuppressWarnings("deprecation")
+@RunWith(Cucumber.class)
+@CucumberOptions(features="src/test/resources")
+public class TestRunner {
+
+@Given("^accessing the \"([^\"]*)\"$")
+public void accessing_the(String arg1) throws Throwable {
+    // Express the Regexp above with the code you wish you had
+    throw new PendingException();
+}
+
+@Given("^the \"([^\"]*)\" button is displayed$")
+public void the_button_is_displayed(String arg1) throws Throwable {
+    // Express the Regexp above with the code you wish you had
+    throw new PendingException();
+}
+
+@When("^Clicking the \"([^\"]*)\" Button$")
+public void Clicking_the_Button(String arg1) throws Throwable {
+    // Express the Regexp above with the code you wish you had
+    throw new PendingException();
+}
+
+@Then("^Registration Form should be displayed$")
+public void Registration_Form_should_be_displayed() throws Throwable {
+    // Express the Regexp above with the code you wish you had
+    throw new PendingException();
+}
+
+
+}

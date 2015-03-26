@@ -1,0 +1,28 @@
+package org.csd.acms;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class TestDatabaseOperations extends JerseyTest {
+
+	@Test
+	public void testMockDB() throws SQLException{
+	    DatabaseConnectionDAO mockdbDAO = mock(DatabaseConnectionDAO.class);
+	    Connection con = mock(Connection.class);
+	    Statement stmt = mock(Statement.class);
+	    ResultSet rs = mock(ResultSet.class);
+
+	    Client client = Client.create();
+	    WebResource webResource = client.resource("myurl");
+	    ClientResponse response = webResource.accept(MediaType.TEXT_PLAIN).get(ClientResponse.class);
+
+	    verify(mockdbDAO).dbConnection();
+
+	    //when(rs.next()).thenReturn(true);
+	    when(rs.getString(1)).thenReturn(value);    
+
+	    actualResult = response.getEntity(String.class);
+	    assertEquals(expectedResult,actualResult );
+	}
+}

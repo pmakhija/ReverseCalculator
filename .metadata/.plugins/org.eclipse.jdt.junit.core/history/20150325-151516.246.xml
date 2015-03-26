@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Rerun org.csd.acms.TestReadInputExcel" project="ACMSProject" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="org.csd.acms.TestReadInputExcel" time="0.384">
+    <testcase name="TestFileOriginal" classname="org.csd.acms.TestReadInputExcel" time="0.384"/>
+    <testcase name="TestFileMissing" classname="org.csd.acms.TestReadInputExcel" time="0.0"/>
+  </testsuite>
+</testrun>

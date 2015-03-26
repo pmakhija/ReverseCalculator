@@ -1,0 +1,307 @@
+package test.java;
+import static org.junit.Assert.*;
+
+import java.text.DecimalFormat;
+
+import junit.framework.Assert;
+import junit.framework.TestCase;
+import main.java.RPNPostFix;
+
+import org.junit.Test;
+
+
+public class TestRPNPostfix  {
+
+	@Test
+	public void testIntegerOperator()  throws Exception {
+		double expected = 9.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5","4","+"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+
+	@Test
+	public void testMultipleIntegerOperator()  throws Exception {
+		double expected = -4.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"1","2","3","+","-"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+
+	
+	@Test
+	public void testFloatOperator() throws Exception  {
+		double expected = 9.3;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5.1","4.2","+"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testNegativeSingleOperator() throws Exception  {
+		double expected = -1.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-5","4","+"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testNegativeBothOperator()  throws Exception {
+		double expected = -9.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-5","-4","+"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testExceptionOperator() throws Exception  {
+		double expected = 1.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5","+"};
+		try{
+			double actual = rpnPostfix.calculate(arr);	
+		}catch(Exception ex){
+			assertTrue(ex != null);
+		}
+		
+	}
+	
+
+	@Test
+	public void testIntegerMinusOperator()  throws Exception {
+		double expected = 1.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5","4","-"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testFloatMinusOperator()  throws Exception {
+		String expected = "0.9";
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5.1","4.2","-"};
+		double actual = rpnPostfix.calculate(arr);
+		DecimalFormat df = new DecimalFormat("0.0");
+		Assert.assertEquals(expected, df.format(actual));
+		
+	}
+	
+	@Test
+	public void testNegativeSingleMinusOperator() throws Exception  {
+		double expected = -9.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-5","4","-"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testNegativeBothMinusOperator() throws Exception  {
+		double expected = -1.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-5","-4","-"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testExceptionMinusOperator() throws Exception  {
+		double expected = 1.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"a","5","-"};
+		try{
+			double actual = rpnPostfix.calculate(arr);	
+		}catch(Exception ex){
+			assertTrue(ex != null);
+		}
+		
+	}
+	
+	//-----------------------------------Multiply Starts-------------------------------------
+	
+	@Test
+	public void testIntegerMultiplyOperator() throws Exception  {
+		double expected = 20.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5","4","*"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testFloatMultiplyOperator() throws Exception  {
+		String expected = "21.42";
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5.1","4.2","*"};
+		double actual = rpnPostfix.calculate(arr);
+		DecimalFormat df = new DecimalFormat("0.00");
+		Assert.assertEquals(expected, df.format(actual));
+		
+	}
+	
+	@Test
+	public void testNegativeSingleMultiplyOperator() throws Exception  {
+		double expected = -20.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-5","4","*"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testNegativeBothMultiplyOperator() throws Exception  {
+		double expected = 20.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-5","-4","*"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testZeroMultiplyOperator() throws Exception  {
+		double expected = 0.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5","0","*"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testExceptionMultiplyOperator() throws Exception  {
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"a","5","*"};
+		try{
+			double actual = rpnPostfix.calculate(arr);	
+		}catch(Exception ex){
+			assertTrue(ex != null);
+		}
+		
+	}
+/*--------------------------------Division ---------------------------------------*/
+	@Test
+	public void testIntegerDivideOperator() throws Exception  {
+		double expected = 5.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"20","4","/"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testFloatDivideOperator() throws Exception  {
+		String expected = "26.06";
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"52.12","2","/"};
+		double actual = rpnPostfix.calculate(arr);
+		DecimalFormat df = new DecimalFormat("0.00");
+		Assert.assertEquals(expected, df.format(actual));
+		
+	}
+	
+	@Test
+	public void testNegativeSingleDivideOperator()  throws Exception {
+		double expected = -5.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-25","5","/"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testNegativeBothDivideOperator() throws Exception  {
+		double expected = 5.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-25","-5","/"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testZeroDivideOperator()  throws Exception {
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-5","0","/"};
+		try{
+			double actual = rpnPostfix.calculate(arr);	
+		}catch(Exception ex){
+			assertTrue(ex != null);
+		}
+		
+	}
+	
+	@Test
+	public void testExceptionDivideOperator()  throws Exception {
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"a","5","/"};
+		try{
+			double actual = rpnPostfix.calculate(arr);	
+		}catch(Exception ex){
+			assertTrue(ex != null);
+		}
+		
+	}
+
+
+	@Test
+	public void testMultipleOperators() throws Exception {
+		double expected = 4.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"6","2","*","3","/"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testMultipleOperators2() throws Exception {
+		double expected = 14.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5","1","2","+","4","*","+","3","-"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+/*------------------------------------factorial---------------------------------------------*/
+	
+	
+	@Test
+	public void testFactorialOperator() throws Exception {
+		double expected = 120.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5","!"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+
+	@Test
+	public void testFactorialNegativeOperator() throws Exception {
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-4","!"};
+		double actual = rpnPostfix.calculate(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+
+	
+}

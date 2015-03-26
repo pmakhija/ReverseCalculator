@@ -1,0 +1,52 @@
+package org.csd.acms;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReadInputExcel {
+	
+	private List<TraineeTO> traineeList;
+	
+	
+
+	public ReadInputExcel() {
+		this.traineeList = new ArrayList<TraineeTO>();
+	}
+
+	public class FileOperationEception extends Exception {
+
+	}
+
+	public List<TraineeTO> ReadFileInputUserDetails(FileInputStream file) throws Exception {
+
+            XSSFWorkbook workbook = new XSSFWorkbook(file);
+            XSSFSheet sheet = workbook.getSheetAt(0);
+            Iterator<Row> rowIterator = sheet.iterator();
+            while (rowIterator.hasNext())
+            {
+            	TraineeTO record = new TraineeTO();
+                Row row = rowIterator.next();
+                record.setReferenceNo(row.getCell(0).toString());
+                record.setName(row.getCell(1).toString());
+                record.setEmailID(row.getCell(2).toString());
+                record.setPhoneNumber(Integer.parseInt(row.getCell(3).toString()));
+                record.setCompanyName(row.getCell(4).toString());
+                record.setProgram(row.getCell(5).toString());
+                record.setCity(row.getCell(6).toString());
+                
+                traineeList.add(record);
+            }
+            file.close();
+	}
+
+}

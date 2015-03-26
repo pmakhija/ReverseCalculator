@@ -1,0 +1,32 @@
+package main.java;
+import java.util.Stack;
+
+
+
+
+public class RPNPostFix {
+	
+	public double calculate(String[] arr) throws Exception{
+		
+		Stack<Double> inputStack = new Stack<Double>();
+		double result=0;
+		for(int i=0; i<arr.length; i++){
+
+			try{
+				inputStack.push(Double.parseDouble(arr[i]));
+			}catch(Exception e){
+				
+				if(("\\+\\-\\*\\/\\^").contains(arr[i])){
+					double rightVariable = inputStack.pop();
+					double leftVariable = inputStack.pop();
+				
+					inputStack.push(OperatorFactory.getBinaryOperations(arr[i]).calculate(leftVariable,rightVariable));
+				}
+				
+				
+							}
+		}
+		return result;
+	}
+
+}

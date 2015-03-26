@@ -1,0 +1,47 @@
+package org.csd.acms;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.List;
+
+import org.junit.Test;
+
+import junit.framework.Assert;
+
+import org.csd.acms.ReadInputExcel;
+import org.csd.acms.factory.FileFactory;
+
+public class TestReadInputExcel {
+
+	@Test(expected = FileNotFoundException.class)
+	public void TestFileMissing() throws FileNotFoundException{
+		//given
+		
+		//when
+		FileFactory.connectToXls("abc.xls");	
+	}
+	
+	@Test
+	public void TestFileOriginal() throws Exception{
+		
+		TraineeTO expected = new TraineeTO();
+		expected.setReferenceNo("1");
+		expected.setName("TestUser");
+		expected.setEmailID("testEmail123@gmail.com");
+		expected.setPhoneNumber(1234567890);
+		expected.setCompanyName("ABC");
+		expected.setProgram("Training");
+		expected.setCity("City");
+		//given
+		ReadInputExcel re = new ReadInputExcel();
+		List<TraineeTO> traineeList = re.ReadFileInputUserDetails(
+				FileFactory.connectToXls(System.getProperty("user.dir")+"\\" +"TestSingleUser.xlsx")
+		);
+		//when
+		
+		
+		//then
+			Assert.assertEquals(expected, traineeList[0]);
+		}
+}

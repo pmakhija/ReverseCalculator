@@ -1,0 +1,20 @@
+package main.java;
+
+import java.util.HashMap;
+
+public class OperatorFactory {
+
+	public static HashMap<String, Object> BinaryOperations;
+	public static HashMap<String, Object> UnaryOperations;
+	
+	static
+	{
+		new BinaryOperations("+",AdditionStrategy);
+	}
+	
+	
+	public HashMap<String, Object> getBinaryOperations(String operator) {
+		return BinaryOperations;
+	}
+	
+}

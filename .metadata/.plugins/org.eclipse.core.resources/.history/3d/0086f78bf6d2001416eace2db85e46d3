@@ -1,0 +1,10 @@
+package main.java;
+
+public class PercentageStrategy implements IUnaryOperator {
+
+	@Override
+	public double calculate(double operand1) {
+		return operand1/100
+	}
+
+}

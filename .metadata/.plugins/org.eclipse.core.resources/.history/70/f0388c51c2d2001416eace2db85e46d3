@@ -1,0 +1,20 @@
+package org.csd.acms;
+
+import org.junit.Test;
+import junit.framework.Assert;
+import org.csd.acms.ReadInputExcel;
+
+public class TestReadInputExcel {
+
+	@Test
+	public void TestFileMissing(){
+		ReadInputExcel re = new ReadInputExcel();
+		try{
+			re.ReadFileInputUserDetails("abc.xlsx");	
+		}catch(Exception ex){
+			Assert.assertTrue(false);
+		}
+		
+		
+	}
+}

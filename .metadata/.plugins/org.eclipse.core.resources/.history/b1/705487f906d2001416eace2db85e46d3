@@ -1,0 +1,35 @@
+package main.java;
+
+import java.util.Stack;
+
+public class RPNPostFix {
+	
+	public double sum(String[] arr){
+		Stack<Double> inputStack = new Stack<Double>();
+		double sum=0;
+		for(int i=0; i<arr.length; i++){
+			if(arr[i].equals("+"))
+			{
+				double rightVariable = inputStack.pop();
+				double leftVariable = inputStack.pop();
+				sum = leftVariable + rightVariable;
+			}else if(arr[i].equals("-"))
+			{
+				double rightVariable = inputStack.pop();
+				double leftVariable = inputStack.pop();
+				sum = leftVariable - rightVariable;
+			}
+			else if(arr[i].equals("*"))
+			{
+				double rightVariable = inputStack.pop();
+				double leftVariable = inputStack.pop();
+				sum = leftVariable * rightVariable;
+			}
+			else{
+				inputStack.push(Double.parseDouble(arr[i]));
+			}
+		}
+		return sum;
+	}
+
+}

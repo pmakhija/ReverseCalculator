@@ -1,0 +1,70 @@
+package test.java;
+import static org.junit.Assert.*;
+import junit.framework.Assert;
+import junit.framework.TestCase;
+import main.java.RPNPostFix;
+
+import org.junit.Test;
+
+
+public class TestRPNPostfix  {
+
+	@Test
+	public void testIntegerOperator() {
+		double expected = 9.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5","4","+"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testFloatOperator() {
+		double expected = 9.3;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5.1","4.2","+"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testNegativeSingleOperator() {
+		double expected = -1.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-5","4","+"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testNegativeBothOperator() {
+		double expected = -9.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-5","-4","+"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testMinusOperator() {
+		double expected = 1.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5","-"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		fail();
+		
+	}
+	
+	
+/*	@Test
+	public void testalternateOperators(){
+		//Calculate({5,4,+,3,+});
+	}*/
+	
+
+}

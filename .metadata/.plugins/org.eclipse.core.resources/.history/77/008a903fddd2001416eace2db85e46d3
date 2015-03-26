@@ -1,0 +1,16 @@
+package org.csd.acms.factory;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class FileFactory {
+	
+	public static FileInputStream connectToXls(String pagth) throws FileNotFoundException{
+		return new FileInputStream(new File(pagth));
+	}
+
+	
+	 
+
+}

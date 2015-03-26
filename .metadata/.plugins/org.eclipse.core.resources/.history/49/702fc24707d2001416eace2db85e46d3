@@ -1,0 +1,265 @@
+package test.java;
+import static org.junit.Assert.*;
+
+import java.text.DecimalFormat;
+
+import junit.framework.Assert;
+import junit.framework.TestCase;
+import main.java.RPNPostFix;
+
+import org.junit.Test;
+
+
+public class TestRPNPostfix  {
+
+	@Test
+	public void testIntegerOperator() {
+		double expected = 9.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5","4","+"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+
+	@Test
+	public void testMultipleIntegerOperator() {
+		double expected = 9.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"1","2","3","+","-"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+
+	
+	@Test
+	public void testFloatOperator() {
+		double expected = 9.3;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5.1","4.2","+"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testNegativeSingleOperator() {
+		double expected = -1.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-5","4","+"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testNegativeBothOperator() {
+		double expected = -9.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-5","-4","+"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testExceptionOperator() {
+		double expected = 1.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5","+"};
+		try{
+			double actual = rpnPostfix.sum(arr);	
+		}catch(Exception ex){
+			assertTrue(ex != null);
+		}
+		
+	}
+	
+
+	@Test
+	public void testIntegerMinusOperator() {
+		double expected = 1.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5","4","-"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testFloatMinusOperator() {
+		String expected = "0.9";
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5.1","4.2","-"};
+		double actual = rpnPostfix.sum(arr);
+		DecimalFormat df = new DecimalFormat("0.0");
+		Assert.assertEquals(expected, df.format(actual));
+		
+	}
+	
+	@Test
+	public void testNegativeSingleMinusOperator() {
+		double expected = -9.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-5","4","-"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testNegativeBothMinusOperator() {
+		double expected = -1.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-5","-4","-"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testExceptionMinusOperator() {
+		double expected = 1.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"a","5","-"};
+		try{
+			double actual = rpnPostfix.sum(arr);	
+		}catch(Exception ex){
+			assertTrue(ex != null);
+		}
+		
+	}
+	
+	//-----------------------------------Multiply Starts-------------------------------------
+	
+	@Test
+	public void testIntegerMultiplyOperator() {
+		double expected = 20.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5","4","*"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testFloatMultiplyOperator() {
+		String expected = "21.42";
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5.1","4.2","*"};
+		double actual = rpnPostfix.sum(arr);
+		DecimalFormat df = new DecimalFormat("0.00");
+		Assert.assertEquals(expected, df.format(actual));
+		
+	}
+	
+	@Test
+	public void testNegativeSingleMultiplyOperator() {
+		double expected = -20.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-5","4","*"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testNegativeBothMultiplyOperator() {
+		double expected = 20.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-5","-4","*"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testZeroMultiplyOperator() {
+		double expected = 0.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"5","0","*"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testExceptionMultiplyOperator() {
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"a","5","*"};
+		try{
+			double actual = rpnPostfix.sum(arr);	
+		}catch(Exception ex){
+			assertTrue(ex != null);
+		}
+		
+	}
+/*--------------------------------Division ---------------------------------------*/
+	@Test
+	public void testIntegerDivideOperator() {
+		double expected = 5.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"20","4","/"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testFloatDivideOperator() {
+		String expected = "26.06";
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"52.12","2","/"};
+		double actual = rpnPostfix.sum(arr);
+		DecimalFormat df = new DecimalFormat("0.00");
+		Assert.assertEquals(expected, df.format(actual));
+		
+	}
+	
+	@Test
+	public void testNegativeSingleDivideOperator() {
+		double expected = -5.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-25","5","/"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testNegativeBothDivideOperator() {
+		double expected = 5.0;
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-25","-5","/"};
+		double actual = rpnPostfix.sum(arr);
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testZeroDivideOperator() {
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"-5","0","/"};
+		try{
+			double actual = rpnPostfix.sum(arr);	
+		}catch(Exception ex){
+			assertTrue(ex != null);
+		}
+		
+	}
+	
+	@Test
+	public void testExceptionDivideOperator() {
+		RPNPostFix rpnPostfix = new RPNPostFix();
+		String arr[] = {"a","5","/"};
+		try{
+			double actual = rpnPostfix.sum(arr);	
+		}catch(Exception ex){
+			assertTrue(ex != null);
+		}
+		
+	}
+
+
+}

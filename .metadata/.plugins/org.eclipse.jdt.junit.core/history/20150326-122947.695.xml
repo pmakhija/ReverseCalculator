@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CSDCucumberProject" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="test.java.TestRunner" time="0.002">
+    <testcase name="initializationError" classname="test.java.TestRunner" time="0.002">
+      <error>cucumber.runtime.CucumberException: Couldn't load formatter class: src/test/resources&#13;
+	at cucumber.runtime.formatter.FormatterFactory.loadClass(FormatterFactory.java:145)&#13;
+	at cucumber.runtime.formatter.FormatterFactory.formatterClass(FormatterFactory.java:135)&#13;
+	at cucumber.runtime.formatter.FormatterFactory.create(FormatterFactory.java:62)&#13;
+	at cucumber.runtime.RuntimeOptions.parse(RuntimeOptions.java:100)&#13;
+	at cucumber.runtime.RuntimeOptions.&lt;init&gt;(RuntimeOptions.java:50)&#13;
+	at cucumber.runtime.RuntimeOptions.&lt;init&gt;(RuntimeOptions.java:44)&#13;
+	at cucumber.runtime.RuntimeOptionsFactory.create(RuntimeOptionsFactory.java:25)&#13;
+	at cucumber.api.junit.Cucumber.&lt;init&gt;(Cucumber.java:60)&#13;
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)&#13;
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)&#13;
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)&#13;
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)&#13;
+	at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:29)&#13;
+	at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:21)&#13;
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)&#13;
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:26)&#13;
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)&#13;
+	at org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:26)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.&lt;init&gt;(JUnit4TestReference.java:33)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestClassReference.&lt;init&gt;(JUnit4TestClassReference.java:25)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader.createTest(JUnit4TestLoader.java:48)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader.loadTests(JUnit4TestLoader.java:38)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:452)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)&#13;
+Caused by: java.lang.ClassNotFoundException: src/test/resources&#13;
+	at java.net.URLClassLoader$1.run(Unknown Source)&#13;
+	at java.net.URLClassLoader$1.run(Unknown Source)&#13;
+	at java.security.AccessController.doPrivileged(Native Method)&#13;
+	at java.net.URLClassLoader.findClass(Unknown Source)&#13;
+	at java.lang.ClassLoader.loadClass(Unknown Source)&#13;
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)&#13;
+	at java.lang.ClassLoader.loadClass(Unknown Source)&#13;
+	at cucumber.runtime.formatter.FormatterFactory.loadClass(FormatterFactory.java:143)&#13;
+	... 25 more&#13;
+&#13;
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

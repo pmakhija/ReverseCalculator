@@ -1,0 +1,49 @@
+package main.java;
+
+import java.util.Stack;
+
+public class RPNPostFix {
+	
+	public double sum(String[] arr) throws Exception{
+		
+		Stack<Double> inputStack = new Stack<Double>();
+		double sum=0;
+		for(int i=0; i<arr.length; i++){
+		
+			try{
+				inputStack.push(Double.parseDouble(arr[i]));
+			}catch(Exception e){
+				double rightVariable ;
+				double leftVariable ;
+				switch(arr[i]){
+				case "+": 
+					rightVariable = inputStack.pop();
+					leftVariable = inputStack.pop(); 
+					sum = leftVariable + rightVariable;
+					break;
+				case "-": 
+					rightVariable = inputStack.pop();
+					leftVariable = inputStack.pop();
+					sum = leftVariable - rightVariable;
+					break;
+				case "*": 
+					 rightVariable = inputStack.pop();
+					 leftVariable = inputStack.pop();
+					sum = leftVariable * rightVariable;
+					break;
+				case "/":
+					rightVariable = inputStack.pop();
+					leftVariable = inputStack.pop();
+					sum = leftVariable / rightVariable;
+					break;
+				
+				default: throw new Exception();
+				}
+			}
+			
+			
+		}
+		return sum;
+	}
+
+}

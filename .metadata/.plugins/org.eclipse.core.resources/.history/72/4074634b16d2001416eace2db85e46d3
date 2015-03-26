@@ -1,0 +1,8 @@
+package main.java;
+
+public interface IBinaryOperator {
+	
+	public abstract double calculate(double operand1, double operand 2);
+}
+
+

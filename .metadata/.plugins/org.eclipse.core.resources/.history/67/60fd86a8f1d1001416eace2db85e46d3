@@ -1,0 +1,15 @@
+import static org.junit.Assert.*;
+import junit.framework.TestCase;
+
+import org.junit.Test;
+
+
+public class RNCTestCase extends TestCase {
+
+	@Test
+	public void testPositive() {
+		//Calculate({5,4,3,+,+});
+		//Calculate({5,4,+,3,+});
+	}
+
+}

@@ -1,0 +1,46 @@
+package org.csd.acms;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+import org.junit.Test;
+
+import junit.framework.Assert;
+
+import org.csd.acms.ReadInputExcel;
+import org.csd.acms.factory.FileFactory;
+
+public class TestReadInputExcel {
+
+	@Test(expected = FileNotFoundException.class)
+	public void TestFileMissing() throws FileNotFoundException{
+		//given
+		
+		//when
+		FileFactory.connectToXls("abc.xls");	
+	}
+	
+	@Test
+	public void TestFileOriginal() throws Exception{
+		
+		//given
+		ReadInputExcel re = new ReadInputExcel();
+		re.ReadFileInputUserDetails(
+				FileFactory.connectToXls(System.getProperty("user.dir")+"\\" +"TestSingleUser.xlsx")
+		);
+		//when
+		
+		
+		//then
+			
+		  BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir")+"\\output.txt"));
+		    try {
+		        StringBuilder sb = new StringBuilder();
+		        String line = br.readLine();
+		        Assert.assertEquals("1.0	TestUser	testEmail123@gmail.com	1.23456789E9	ABC	Training	City", line.trim());
+		    } finally {
+		        br.close();
+		    }
+	}
+}

@@ -1,0 +1,25 @@
+package org.csd.acms.factory;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import com.googlecode.sqlsheet.Driver;
+import com.mysql.jdbc.Statement;
+
+public class FileFactory {
+	
+	private static Connection writeConnection;
+	
+	public static void connectToXls(String path) throws FileNotFoundException{
+		Class.forName("com.googlecode.sqlsheet.Driver");
+		writeConnection = DriverManager.getConnection("jdbc:xls:file:" + path);
+		Statement writeStatement = (Statement) writeConnection.createStatement();
+	}
+
+	
+	 
+
+}

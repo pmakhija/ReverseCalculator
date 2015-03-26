@@ -1,0 +1,24 @@
+package test.java;
+import static org.junit.Assert.*;
+import junit.framework.TestCase;
+
+import org.junit.Test;
+
+
+public class RNCTestCase  {
+
+	@Test
+	public void testtwocontOperator() {
+		//Calculate({5,4,3,+,+});
+		
+		
+		
+	}
+	
+	@Test
+	public void testalternateOperators(){
+		//Calculate({5,4,+,3,+});
+	}
+	
+
+}

@@ -1,0 +1,62 @@
+package org.csd.acms;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReadInputExcel {
+	
+	private List<TraineeTO> traineeList;
+	
+	
+
+	public ReadInputExcel() {
+		this.traineeList = new ArrayList<TraineeTO>();
+	}
+
+	public class FileOperationEception extends Exception {
+
+	}
+
+	public void ReadFileInputUserDetails(FileInputStream file) throws Exception {
+
+            XSSFWorkbook workbook = new XSSFWorkbook(file);
+            XSSFSheet sheet = workbook.getSheetAt(0);
+            
+            Iterator<Row> rowIterator = sheet.iterator();
+            while (rowIterator.hasNext())
+            {
+                Row row = rowIterator.next();
+                Iterator<Cell> cellIterator = row.cellIterator();
+                TraineeTO traineeTO = new TraineeTO();
+                while (cellIterator.hasNext())
+                {
+                    Cell cell = cellIterator.next();
+                     
+                    //Check the cell type and format accordingly
+                    switch (cell.getCellType())
+                    {
+                        case Cell.CELL_TYPE_NUMERIC:
+                        	double value = cell.getNumericCellValue();
+                        	
+                            break;
+                        case Cell.CELL_TYPE_STRING:
+                        	cell.getStringCellValue();
+                            break;
+                    }
+                }
+                
+            }
+            file.close();
+	}
+
+}

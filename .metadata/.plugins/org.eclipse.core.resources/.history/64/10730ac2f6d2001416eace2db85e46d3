@@ -1,0 +1,12 @@
+package main.java;
+
+public class FactorialStrategy implements IUnaryOperator{
+
+	@Override
+	public double calculate(double operand) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+
+}

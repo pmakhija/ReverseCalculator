@@ -1,0 +1,5 @@
+1427179657287	Move compilation unit
+1427179947907	Rename type 'RNCTestCase'
+1427190116803	Rename method 'sum'
+1427190164273	Rename local variable 'sum'
+1427195337077	Rename type 'IOperators'
